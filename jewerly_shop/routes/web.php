@@ -28,3 +28,5 @@ Route::get('/update', [Controller::class, 'Update'])->name('update');
 Route::post('/update', [Controller::class, 'Save']);
 
 Route::post('/delete', [Controller::class, 'Delete'])->name('delete');
+
+Route::post('/discount', [ProductsController::class, 'Discount'])->name('discount');

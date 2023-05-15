@@ -66,4 +66,17 @@ class ProductsController extends Controller
 
         return view('product_form', compact('title', 'id', 'description', 'price', 'types'));
     }
+
+    public function Discount(Request $request){
+
+        $discount = $request->get('discount');
+        $products = Product::all();
+
+        foreach ($products as $product) {
+            $product->price -= $product->price * $discount / 100;
+            $product->save();
+        }
+
+        return redirect()->route('products');
+    }
 }

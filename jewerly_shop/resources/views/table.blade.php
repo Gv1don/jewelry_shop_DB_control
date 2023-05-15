@@ -10,6 +10,11 @@
         @csrf
         <button name="type" value="buyer" type="submit" class="btn btn-primary">Создать запись</button>
     </form>
+    <form method="POST" action="{{ route('discount') }}">
+        @csrf
+        <input type="number" name="discount" min="0" max="100" step="1">
+        <button type="submit" class="btn btn-primary">Сделать скидку</button>
+    </form>
     <div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav">
